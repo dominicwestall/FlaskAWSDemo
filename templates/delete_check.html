@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a user</title>
+</head>
+<body>
+    <form method="post" action="/deletecheck">
+
+        <p>Are you sure you want to delete {{ userdata.first_name}} ?</p>
+        <br>
+        <a href="{{url_for('deleteproceed')}}?ID={{userdata.id}}">Proceed with Delete</a> --- --- <a href="{{url_for('users')}}">Back to users page</a>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User page</title>
+</head>
+<body>
+    <a href="/registeruser">Register a user</a> -- <a href="/registeralogin">Register a login</a> -- <a href="/loginuser">Login</a>
+    <br>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email address</td>
+            <td>Mobile</td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% for useritem in usersdata %}
+        <tr>
+            <td>{{useritem.id}}</td>
+            <td>{{useritem.first_name}}</td>
+            <td>{{useritem.last_name}}</td>
+            <td>{{useritem.email_address}}</td>
+            <td>{{useritem.mobile}}</td>
+            <td><a href="{{url_for('edit')}}?ID={{useritem.id}}">Edit</a></td>
+            <td><a href="{{url_for('deletecheck')}}?ID={{useritem.id}}">Delete</a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+   
+</body>
+</html>
